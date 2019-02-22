@@ -11,19 +11,16 @@ public class GameField {
 		this.height=height;
 		Level = new GameTile[width][height];
 		
-		for(int i = 0; i<width;i++){
-			for(int j=0;j<height;j++){
+		for(int y = 0; y<height;y++){
+			for(int x=0;x<width;x++){
 			
-			switch (level.charAt(i)){
+			switch (level.charAt(x+y*width)){
 				case '#':
-					WallTile walltile = new WallTile();
-					Level[i][j] = walltile;break;
+					Level[x][y] = new WallTile(); break;
 				case ' ':
-					EmptyTile emptytile = new EmptyTile();
-					Level[i][j] = emptytile;break;
+					Level[x][y] = new EmptyTile(); break;
 				case '@':
-					DoorTile doortile = new DoorTile();
-					Level[i][j] = doortile;break;
+					Level[x][y] = new DoorTile();break;
 				
 				default: System.out.println("Kein bekanntes Zeichen");
 			}
