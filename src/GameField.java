@@ -14,13 +14,13 @@ public class GameField {
 		for(int y = 0; y<height;y++){
 			for(int x=0;x<width;x++){
 			
-			switch (level.charAt(x+y*width)){
+			switch (level.charAt(x+(y*width))){
 				case '#':
 					Level[x][y] = new WallTile(); break;
 				case ' ':
 					Level[x][y] = new EmptyTile(); break;
 				case '@':
-					Level[x][y] = new DoorTile();break;
+					Level[x][y] = new DoorTile(); break;
 				
 				default: System.out.println("Kein bekanntes Zeichen");
 			}
@@ -28,13 +28,12 @@ public class GameField {
 		}
 	}
 	public String toString(){
-		String output = null;
+		String output="";
 		for(int i = 0; i<width; i++){
 			for(int j = 0; j<height; j++){
 				output=output+Level[i][j].toString();
 			}
-		//	output=output+'\n';
-		}
+		  }
 			
 		return output;
 	}
