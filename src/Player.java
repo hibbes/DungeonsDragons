@@ -17,5 +17,7 @@ public class Player extends GameTile{
 	 public String toString(){
 		 return s;
 	 }
+	 
+	
 	
 }
