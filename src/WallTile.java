@@ -1,7 +1,11 @@
-
 public class WallTile extends GameTile {
 
-	 private String s = "#";
+	 public WallTile() {
+		super();
+		
+	}
+
+	private String s = "#";
 	 
 	 public String toString(){
 		 return s;
